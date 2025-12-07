@@ -49,23 +49,28 @@ nav a:hover {
 /* --- Details section layout --- */
 .details-section {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   gap: 50px;
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
+  max-width: none;         /* remove max-width to allow full width */
+  margin: 50px 20px 0 0;   /* top margin, right margin, 0 bottom, 0 left (text hugs left) */
+  padding: 0;
 }
+
+
 
 /* Left column: images */
 .images-column {
-  flex: 2; /* bigger portion */
+  flex: 1; /* fills remaining space */
+  display: flex;
+  justify-content: center; /* centers the gallery horizontally */
 }
+
 
 /* Right column: text details */
 .text-column {
-  flex: 1; /* smaller portion */
+  flex: 0 0 200px; /* fixed width, doesn’t shrink/grow */
 }
+
 
 .text-column h1 {
   font-size: 36px;
