@@ -1,77 +1,63 @@
-/* --- Global resets --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fafafa;
-  color: #222;
-  line-height: 1.6;
-  padding-bottom: 40px;
-}
-
-/* --- Header --- */
-header {
+/* --- Details section layout --- */
+.details-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
+/* Left column: images */
+.images-column {
+  flex: 2; /* bigger portion */
 }
 
-/* Navigation */
-nav ul {
+/* Right column: text details */
+.text-column {
+  flex: 1; /* smaller portion */
+}
+
+.text-column h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.text-column ul {
   list-style: none;
-  display: flex;
-  gap: 28px;
+  padding-left: 0;
 }
 
-nav a {
+.text-column li {
+  margin-bottom: 10px;
+}
+
+.text-column a {
   text-decoration: none;
   color: #222;
   font-size: 18px;
   transition: opacity 0.3s;
 }
 
-nav a:hover {
+.text-column a:hover {
   opacity: 0.6;
 }
 
-/* --- Gallery --- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: cover;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-/* --- Mobile layout (1 image per row) --- */
+/* --- Responsive: on smaller screens, stack text above images --- */
 @media (max-width: 700px) {
-  .gallery {
-    grid-template-columns: 1fr;
+  .details-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-column {
+    order: 0; /* appears first */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .images-column {
+    order: 1; /* appears below text */
   }
 }
