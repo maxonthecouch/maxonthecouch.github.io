@@ -59,14 +59,13 @@ nav a:hover {
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 4px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
