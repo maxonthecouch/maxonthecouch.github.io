@@ -51,7 +51,7 @@ nav a:hover {
   display: flex;
   align-items: flex-start;
   gap: 50px;
-  max-width: 1200;
+  max-width: 1200px;
   margin: 30px 20px 0 20px;   /* top margin, right margin, 0 bottom,  left (text hugs left) */
   padding: 0;
 }
