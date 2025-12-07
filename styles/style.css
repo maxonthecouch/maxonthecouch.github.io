@@ -109,16 +109,16 @@ nav a:hover {
 }
 
 /* --- Gallery --- */
+.images-column .gallery {
+  max-width: 600px;   /* limits total gallery width */
+  width: 100%;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   margin: 0; /* gallery margin controlled by parent column */
-}
-
-.images-column .gallery {
-  max-width: 600px;   /* limits total gallery width */
-  width: 100%;
 }
 
 .gallery img {
