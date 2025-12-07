@@ -10,61 +10,24 @@ body {
   background: #fafafa;
   color: #222;
   line-height: 1.6;
-  padding-bottom: 40px;
 }
 
-/* --- Header --- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
+/* --- Header removed, text overlay used instead --- */
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #222;
-  font-size: 18px;
-  transition: opacity 0.3s;
-}
-
-nav a:hover {
-  opacity: 0.6;
-}
-
-/* --- Details section layout --- */
-.details-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  width: 100%;              /* full width */
-  margin: 30px 0 0 0;       /* top margin only */
-  padding: 0 20px;          /* space from left and right edges */
-}
-
-/* Left column: text details */
+/* --- Text overlay in top-left --- */
 .text-column {
-  flex: 0 0 200px;          /* fixed width */
-  margin-left: 20px;        /* slight distance from left edge */
+  position: absolute;        /* float above images */
+  top: 20px;                 /* distance from top of viewport */
+  left: 20px;                /* distance from left edge */
+  z-index: 10;               /* stays above images */
+  background: rgba(255, 255, 255, 0.6); /* semi-transparent background */
+  padding: 15px 20px;
+  border-radius: 8px;
 }
 
 .text-column h1 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .text-column ul {
@@ -73,7 +36,7 @@ nav a:hover {
 }
 
 .text-column li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .text-column a {
@@ -87,24 +50,13 @@ nav a:hover {
   opacity: 0.6;
 }
 
-/* Right column: images */
+/* --- Images gallery --- */
 .images-column {
-  flex: 1;                  /* fill remaining space */
-  display: flex;
-  justify-content: center;   /* center gallery horizontally */
-}
-
-/* --- Gallery --- */
-.images-column .gallery {
-  max-width: 600px;          /* limits total gallery width */
-  width: 100%;
-}
-
-.gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-  margin: 0;                 /* controlled by parent column */
+  max-width: 600px;          /* controls total gallery width */
+  margin: 100px auto 50px auto; /* top margin allows space for overlay text */
 }
 
 .gallery img {
@@ -113,33 +65,24 @@ nav a:hover {
   border-radius: 4px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease; /* no zoom effect */
+  transition: box-shadow 0.3s ease;
 }
 
-/* Hover: shadow only */
 .gallery img:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* --- Mobile layout (stack columns) --- */
+/* --- Mobile responsiveness --- */
 @media (max-width: 700px) {
-  .details-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .text-column {
-    order: 0;                /* appears first */
-    text-align: center;
-    margin-bottom: 20px;
+    width: 90%;
+    font-size: 16px;
+    padding: 10px 15px;
   }
 
   .images-column {
-    order: 1;                /* appears below text */
-  }
-
-  .gallery {
-    grid-template-columns: 1fr; /* single column images on mobile */
-    gap: 20px;
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: 120px auto 50px auto; /* keep space for text overlay */
   }
 }
