@@ -10,16 +10,15 @@ body {
   background: #fafafa;
   color: #222;
   line-height: 1.6;
+  position: relative; /* needed for absolute text overlay */
 }
-
-/* --- Header removed, text overlay used instead --- */
 
 /* --- Text overlay in top-left --- */
 .text-column {
-  position: absolute;        /* float above images */
-  top: 20px;                 /* distance from top of viewport */
-  left: 20px;                /* distance from left edge */
-  z-index: 10;               /* stays above images */
+  position: absolute;          /* overlay on top of images */
+  top: 20px;
+  left: 20px;
+  z-index: 10;                 /* ensures it stays above images */
   background: rgba(255, 255, 255, 0.6); /* semi-transparent background */
   padding: 15px 20px;
   border-radius: 8px;
@@ -50,29 +49,36 @@ body {
   opacity: 0.6;
 }
 
-/* --- Images gallery --- */
+/* --- Images column --- */
 .images-column {
+  display: flex;
+  justify-content: center; /* centers the gallery horizontally */
+}
+
+/* --- Gallery --- */
+.images-column .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
   gap: 25px;
-  max-width: 600px;          /* controls total gallery width */
-  margin: 100px auto 50px auto; /* top margin allows space for overlay text */
+  max-width: 600px;        /* limits overall gallery width */
+  width: 100%;             /* ensures gallery fills parent container */
+  margin: 100px auto 50px auto; /* top margin leaves space for text overlay */
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 4px;      /* subtle curve */
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease; /* no zoom effect */
 }
 
 .gallery img:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* --- Mobile responsiveness --- */
+/* --- Mobile layout (stack images) --- */
 @media (max-width: 700px) {
   .text-column {
     width: 90%;
@@ -80,9 +86,9 @@ body {
     padding: 10px 15px;
   }
 
-  .images-column {
-    grid-template-columns: 1fr;
+  .images-column .gallery {
+    grid-template-columns: 1fr; /* single column images */
     max-width: 90%;
-    margin: 120px auto 50px auto; /* keep space for text overlay */
+    margin: 120px auto 50px auto; /* keeps top margin for overlay text */
   }
 }
