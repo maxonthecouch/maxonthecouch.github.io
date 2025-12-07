@@ -62,7 +62,7 @@ nav a:hover {
   border-radius: 4px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
