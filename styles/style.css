@@ -79,34 +79,37 @@ body {
 }
 
 /* --- Mobile layout (stack images) --- */
+/* --- Mobile layout (TEST VERSION) --- */
 @media (max-width: 700px) {
-  /* Text on top of the page */
-  .text-column {
-    position: relative;       /* remove overlay */
-    top: auto;
-    left: auto;
-    width: 90%;               /* almost full width */
-    margin: 20px auto;        /* space around text, centered */
-    font-size: 16px;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.8); /* optional translucent bg */
-    border-radius: 8px;
-    z-index: auto;            /* no overlay needed */
+
+  /* Make it *very* obvious you're in mobile mode */
+  body {
+    background: hotpink !important;
   }
 
-  /* Gallery stacked below text */
+  .text-column {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 20px;
+    background: white; /* bright contrast against pink */
+    border: 4px solid black;
+  }
+
+  /* Stack images */
   .images-column .gallery {
-    grid-template-columns: 1fr;  /* single column images */
-    max-width: 95%;              /* almost full width of screen */
-    width: 100%;
-    margin: 20px auto 50px auto; /* space between text and gallery */
-    gap: 15px;                   /* slightly smaller gap for mobile */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 95%;
+    margin: 20px auto 80px auto;
   }
 
   .gallery img {
-    width: 100%;                 /* images fill their column */
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 0; /* square for obvious change */
+    box-shadow: none; /* removed for clarity */
   }
 }
-
-
