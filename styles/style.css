@@ -46,36 +46,6 @@ nav a:hover {
   opacity: 0.6;
 }
 
-/* --- Gallery --- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: cover;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-/* --- Mobile layout (1 image per row) --- */
-@media (max-width: 700px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* --- Details section layout --- */
 .details-section {
   display: flex;
@@ -122,7 +92,29 @@ nav a:hover {
   opacity: 0.6;
 }
 
-/* --- Responsive: on smaller screens, stack text above images --- */
+/* --- Gallery --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 0; /* gallery margin controlled by parent column */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px; /* reduced curve */
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease; /* removed zoom effect */
+}
+
+/* Optional hover effect: shadow only */
+.gallery img:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* --- Mobile layout (stack columns) --- */
 @media (max-width: 700px) {
   .details-section {
     flex-direction: column;
@@ -137,5 +129,10 @@ nav a:hover {
 
   .images-column {
     order: 1; /* appears below text */
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* single column images on mobile */
+    gap: 20px;
   }
 }
