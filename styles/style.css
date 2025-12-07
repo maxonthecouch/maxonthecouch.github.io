@@ -116,6 +116,11 @@ nav a:hover {
   margin: 0; /* gallery margin controlled by parent column */
 }
 
+.images-column .gallery {
+  max-width: 600px;   /* limits total gallery width */
+  width: 100%;
+}
+
 .gallery img {
   width: 100%;
   height: auto;
