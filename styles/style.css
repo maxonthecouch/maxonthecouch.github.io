@@ -60,9 +60,9 @@ nav a:hover {
 
 /* Left column: images */
 .images-column {
-  flex: 1; /* fills remaining space */
-  display: flex;
-  justify-content: center; /* centers the gallery horizontally */
+  flex: 1;                   /* takes remaining space next to text */
+  display: flex;              /* make it a flex container */
+  justify-content: center;    /* centers the gallery horizontally */
 }
 
 
