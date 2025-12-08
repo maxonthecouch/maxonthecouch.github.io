@@ -19,7 +19,7 @@ body {
   top: 20px;
   left: 20px;
   z-index: 10;                 /* ensures it stays above images */
-  background: rgba(255, 255, 255, 0.4);  /* lighter so blur pops */
+  background: rgba(255, 255, 255, 0.2);  /* lighter so blur pops */
 backdrop-filter: blur(12px);
 -webkit-backdrop-filter: blur(12px);   /* Safari support */
   padding: 15px 20px;
