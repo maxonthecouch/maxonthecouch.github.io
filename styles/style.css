@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
+  background: #fafafa;
   color: #222;
   line-height: 1.6;
   position: relative; /* needed for absolute text overlay */
@@ -19,7 +19,9 @@ body {
   top: 20px;
   left: 20px;
   z-index: 10;                 /* ensures it stays above images */
-  background: rgba(255, 255, 255, 0.6); /* semi-transparent background */
+  background: rgba(255, 255, 255, 0.4);  /* lighter so blur pops */
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);   /* Safari support */
   padding: 15px 20px;
   border-radius: 8px;
 }
