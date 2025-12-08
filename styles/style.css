@@ -82,34 +82,39 @@ body {
 /* --- Mobile layout (TEST VERSION) --- */
 @media (max-width: 700px) {
 
-  /* Make it *very* obvious you're in mobile mode */
-  body {
-    background: hotpink !important;
-  }
-
+  /* Text at the top, clean styling */
   .text-column {
     position: relative;
     top: auto;
     left: auto;
     width: 90%;
     margin: 20px auto;
-    padding: 20px;
-    font-size: 20px;
-    background: white; /* bright contrast against pink */
-    border: 4px solid black;
+    padding: 10px 15px;
+
+    background: white;       /* BACK TO WHITE */
+    border: none;            /* REMOVE THE BORDER */
+    border-radius: 8px;
   }
 
-  /* Stack images */
+  /* Gallery loads in 2 columns on mobile */
   .images-column .gallery {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* TWO PER ROW */
     max-width: 95%;
-    margin: 20px auto 80px auto;
+    width: 100%;
+    margin: 20px auto 50px auto;
+    gap: 15px;
   }
 
+  /* Slightly zoomed-in images for nicer mobile spacing */
   .gallery img {
     width: 100%;
-    border-radius: 0; /* square for obvious change */
-    box-shadow: none; /* removed for clarity */
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  /* White background for the entire mobile page */
+  body {
+    background: white !important; /* FORCE IT TO WHITE */
   }
 }
