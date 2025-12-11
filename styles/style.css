@@ -27,7 +27,7 @@ body {
 }
 
 .text-column h1 {
-  font-size: 36px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -43,7 +43,7 @@ body {
 .text-column a {
   text-decoration: none;
   color: #222;
-  font-size: 18px;
+  font-size: 10px;
   transition: opacity 0.3s;
 }
 
