@@ -40,7 +40,7 @@ html, body {
 /* BIG NAME */
 .hero-name {
   position: absolute;
-  bottom: -0.25em;
+  bottom: -0.2em;
   left: -0.1em;
 
   font-size: 32vw;
