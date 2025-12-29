@@ -81,8 +81,10 @@ html, body {
 /* CONTACT PAGE */
 .contact-section {
   text-align: left;
-  margin-top: 150px; /* spacing below nav */
-  font-family: sans-serif; /* match nav font */
+  margin-top: 150px;        /* keeps spacing below nav */
+  padding: 0 40px;          /* adds space on left and right */
+  font-family: sans-serif;  /* match nav font */
+  max-width: 600px;         /* optional: limit width for readability */
 }
 
 .contact-section a {
