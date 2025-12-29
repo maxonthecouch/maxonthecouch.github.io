@@ -13,9 +13,11 @@ html, body {
   left: 40px;
   right: 40px;
 
+  
   display: flex;
-  justify-content: space-between;
-  gap: 5px;         
+  justify-content: flex-start;  /* Align items to the left */
+  gap: 20px;                    /* Space between links; reduce this to make them closer */
+
 
   font-family: sans-serif;
   font-size: 18px;
