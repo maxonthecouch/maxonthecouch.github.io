@@ -45,7 +45,7 @@ html, body {
   bottom: -0.2em;
   left: -0.1em;
 
-  font-size: clamp(50px, 20vw, 300px); /* scales between 60px and 300px */
+  font-size: clamp(20px, 20vw, 300px); /* scales between 60px and 300px */
   line-height: 0.9;
   font-weight: 700;
 
