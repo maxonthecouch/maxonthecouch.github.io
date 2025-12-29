@@ -80,7 +80,7 @@ html, body {
 
 /* CONTACT PAGE */
 .contact-section {
-  text-align: center;
+  text-align: left;
   margin-top: 150px; /* spacing below nav */
   font-family: sans-serif; /* match nav font */
 }
