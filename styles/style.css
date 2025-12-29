@@ -54,3 +54,26 @@ html, body {
 
   user-select: none;
 }
+
+/* --- Gallery --- */
+.images-column .gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 25px;
+  max-width: 600px;        /* limits overall gallery width */
+  width: 100%;             /* ensures gallery fills parent container */
+  margin: 100px auto 50px auto; /* top margin leaves space for text overlay */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;      /* subtle curve */
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease; /* no zoom effect */
+}
+
+.gallery img:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
