@@ -45,11 +45,11 @@ html, body {
   bottom: -0.2em;
   left: -0.1em;
 
-  font-size: clamp(20px, 60vw, 300px); /* scales between 60px and 300px */
-  line-height: 0.9;
+  font-size: 36vw;
   font-weight: 700;
+  line-height: 0.9;
 
-  color: #0a36ff;
+  color: #042AD9;
   margin: 0;
 
   user-select: none;
