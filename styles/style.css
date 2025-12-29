@@ -77,3 +77,24 @@ html, body {
 .gallery img:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
+
+/* CONTACT PAGE */
+.contact-section {
+  text-align: center;
+  margin-top: 150px; /* spacing below nav */
+  font-family: sans-serif; /* match nav font */
+}
+
+.contact-section a {
+  display: block;           /* each link on its own line */
+  font-size: 16px;          /* slightly smaller than nav (nav is 18px) */
+  color: #222;              /* dark gray like nav */
+  text-decoration: none;
+  margin: 15px 0;           /* spacing between lines */
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #000;              /* full black on hover */
+}
+
