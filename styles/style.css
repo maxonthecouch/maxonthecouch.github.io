@@ -121,7 +121,7 @@ html, body {
 /* Mobile adjustments for hero name */
 @media (max-width: 700px) {
   .hero-name {
-    font-size: 60vw; /* increase font size on smaller screens */
+    font-size: 80vw; /* increase font size on smaller screens */
     line-height: 0.9; /* keeps letters close together */
   }
 }
