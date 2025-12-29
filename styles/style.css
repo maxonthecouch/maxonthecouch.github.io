@@ -1,4 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* THIS is what crops the text */
+}
+
+.hero-name {
+  position: absolute;
   bottom: -0.2em;   /* pushes it past bottom */
   left: -0.1em;     /* pushes it past left */
   font-size: 30vw;  /* scales with screen width */
