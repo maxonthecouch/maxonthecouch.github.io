@@ -60,22 +60,39 @@ html, body {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 images per row */
   gap: 25px;
-  max-width: 600px;        /* limits overall gallery width */
-  width: 100%;             /* ensures gallery fills parent container */
-  margin: 100px auto 50px auto; /* top margin leaves space for text overlay */
+  max-width: 600px;
+  width: 100%;
+  margin: 100px auto 50px auto;
+  position: relative; /* needed for overlay pseudo-elements */
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 4px;      /* subtle curve */
+  border-radius: 4px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease; /* no zoom effect */
+  transition: box-shadow 0.3s ease;
+  position: relative;      /* ensures pseudo-element sits correctly */
+  z-index: 1;
 }
 
+/* Hover effect stays the same */
 .gallery img:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Invisible overlay to "mask" image right-click */
+.gallery img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;  /* invisible overlay */
+  pointer-events: all;      /* catches the click */
+  z-index: 2;               /* above image */
 }
 
 /* CONTACT PAGE */
@@ -100,28 +117,11 @@ html, body {
   color: #000;              /* full black on hover */
 }
 
-/* Wrap gallery images in a container */
-.gallery img {
-  position: relative;
-  pointer-events: auto; /* normal interaction */
-}
-
-/* Add an invisible overlay on top of each image */
-.gallery img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: all;   /* overlay catches the click */
-  background: transparent; /* invisible */
-}
 
 /* Mobile adjustments for hero name */
 @media (max-width: 700px) {
   .hero-name {
-    font-size: 70vw; /* increase font size on smaller screens */
+    font-size: 64vw; /* increase font size on smaller screens */
     line-height: 0.9; /* keeps letters close together */
   }
 }
