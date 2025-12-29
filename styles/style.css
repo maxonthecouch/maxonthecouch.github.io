@@ -98,3 +98,11 @@ html, body {
   color: #000;              /* full black on hover */
 }
 
+/* Mobile adjustments for hero name */
+@media (max-width: 700px) {
+  .hero-name {
+    font-size: 50vw; /* increase font size on smaller screens */
+    line-height: 0.9; /* keeps letters close together */
+  }
+}
+
