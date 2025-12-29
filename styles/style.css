@@ -45,11 +45,11 @@ html, body {
   bottom: -0.2em;
   left: -0.1em;
 
-  font-size: 36vw;
-  font-weight: 700;
+  font-size: clamp(50px, 20vw, 300px); /* scales between 60px and 300px */
   line-height: 0.9;
+  font-weight: 700;
 
-  color: #0029ED;
+  color: #0a36ff;
   margin: 0;
 
   user-select: none;
@@ -100,11 +100,5 @@ html, body {
   color: #000;              /* full black on hover */
 }
 
-/* Mobile adjustments for hero name */
-@media (max-width: 700px) {
-  .hero-name {
-    font-size: 80vw; /* increase font size on smaller screens */
-    line-height: 0.9; /* keeps letters close together */
-  }
-}
+
 
