@@ -19,6 +19,7 @@ html, body {
 
   font-family: sans-serif;
   font-size: 18px;
+  z-index: 1000;                 /* <-- add this line */
 }
 
 .nav a {
